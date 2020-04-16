@@ -1,0 +1,15 @@
+String nome, String telefone, String endereco, String email, char sexo, String cpf
+
+"Adair", "51995599559", "Rua Abc 123", "adair@email.com.br", 'M', "33355577722"
+
+"Carlos da Silva", "5133334444", "Rua Abc 321", "joao@ggggg", 'O', "55544433322"
+
+"Ivone", "01888884646", "Rua Abc 222", "ivone@email.com.br", 'F', "99999955511"
+
+
+"12345", "555", TipoConta.CORRENTE, BigDecimal.valueOf(0)
+
+"12345", "556", TipoConta.POUPANCA, BigDecimal.valueOf(500)
+
+"54321", "557", TipoConta.SALARIO, BigDecimal.valueOf(200)
+
