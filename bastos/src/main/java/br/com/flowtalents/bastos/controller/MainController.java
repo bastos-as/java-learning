@@ -1,11 +1,11 @@
 package br.com.flowtalents.bastos.controller;
 
-import br.com.flowtalents.bastos.banco.Cliente;
-import br.com.flowtalents.bastos.banco.Conta;
-import br.com.flowtalents.bastos.banco.Transacao;
-import br.com.flowtalents.bastos.banco.repositorios.RepositorioClientes;
-import br.com.flowtalents.bastos.banco.repositorios.RepositorioContas;
-import br.com.flowtalents.bastos.banco.repositorios.RepositorioTransacoes;
+import br.com.flowtalents.bastos.domain.Cliente;
+import br.com.flowtalents.bastos.domain.Conta;
+import br.com.flowtalents.bastos.domain.Transacao;
+import br.com.flowtalents.bastos.domain.repositorios.RepositorioClientes;
+import br.com.flowtalents.bastos.domain.repositorios.RepositorioContas;
+import br.com.flowtalents.bastos.domain.repositorios.RepositorioTransacoes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,11 +24,6 @@ public class MainController {
 
     @Autowired
     private RepositorioTransacoes repositorioTransacoes;
-
-    @GetMapping(path="/allclientes")
-    public @ResponseBody Iterable<Cliente> getAllClientes() {
-        return repositorioClientes.findAll();
-    }
 
     @GetMapping(path="/transacoesrealizadas/{id}")
     public @ResponseBody Iterable<Transacao> transacoesRealizadas(
