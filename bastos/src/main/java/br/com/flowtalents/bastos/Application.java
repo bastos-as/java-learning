@@ -1,9 +1,11 @@
 package br.com.flowtalents.bastos;
 
-import br.com.flowtalents.bastos.banco.*;
-import br.com.flowtalents.bastos.banco.repositorios.RepositorioClientes;
-import br.com.flowtalents.bastos.banco.repositorios.RepositorioContas;
-import br.com.flowtalents.bastos.banco.repositorios.RepositorioTransacoes;
+import br.com.flowtalents.bastos.domain.*;
+import br.com.flowtalents.bastos.domain.repositorios.RepositorioClientes;
+import br.com.flowtalents.bastos.domain.repositorios.RepositorioContas;
+import br.com.flowtalents.bastos.domain.repositorios.RepositorioTransacoes;
+import br.com.flowtalents.bastos.exceptions.OperacaoInvalidaException;
+import br.com.flowtalents.bastos.exceptions.SaldoInsuficienteException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -103,7 +105,7 @@ public class Application {
                         BigDecimal.valueOf(50),
                         repositorioContas, repositorioTransacoes);
                 log.info("Transação 1 concluída com sucesso");
-            } catch (SaldoInsuficienteException|InvalidAttributeValueException|OperacaoInvalidaException e) {
+            } catch (SaldoInsuficienteException |InvalidAttributeValueException| OperacaoInvalidaException e) {
                 e.getMessage();
             }
 
